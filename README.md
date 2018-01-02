@@ -53,6 +53,8 @@ Variables are not required, unless specified.
 | `bind_zone_domains`          | n/a                  | A list of domains to configure, with a separate dict for each domain, with relevant details                                  |
 | `- allow_update`             | `['none']`           | A list of hosts that are allowed to dynamically update this DNS zone.                                                        |
 | `- also_notify`              | -                    | A list of servers that will receive a notification when the master zone file is reloaded.                                    |
+| `bind_zone_forward_name`       | -                                | Name of the forward zone                                                                                                 |
+| `bind_zone_forward_forwarders` | `[]`                             | List of forwarders for the forward zone                                                                                  |
 | `- delegate`                 | `[]`                 | Zone delegation. See below this table for examples.                                                                          |
 | `- hostmaster_email`         | `hostmaster`         | The e-mail address of the system administrator for the zone                                                                  |
 | `- hosts`                    | `[]`                 | Host definitions. See below this table for examples.                                                                         |

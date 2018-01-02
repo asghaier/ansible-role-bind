@@ -147,3 +147,11 @@ zone "{{ (network | ipaddr('revdns'))[-(9+(network|regex_replace('^.*/','')|int)
 {% endif %}
 {% endfor %}
 {% endif %}
+
+{% if bind_zone_forward_name is defined %}
+zone "{{ bind_zone_forward_name }}" IN {
+  type forward;
+  {% if bind_zone_forward_forwarders|length > 0 %}forwarders { {{ bind_zone_forward_forwarders|join('; ') }}; };{% endif %}
+};
+{% endif %}
+
