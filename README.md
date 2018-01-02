@@ -28,6 +28,7 @@ Variables are not required, unless specified.
 | :---                           | :---                             | :---                                                                                                                     |
 | `bind_acls`                    | `[]`                             | A list of ACL definitions, which are dicts with fields `name` and `match_list`. See below for an example.           |
 | `bind_allow_query`             | `['localhost']`                  | A list of hosts that are allowed to query this DNS server. Set to ['any'] to allow all hosts                             |
+| `bind_allow_query_cache`       | `false`                          | If `true`, BIND is set up as a caching name server                                                                       |
 | `bind_allow_update`            | `['none']`                       | A list of hosts that are allowed to dynamically update this DNS server.                                                  |
 | `bind_check_names`             | `[]`                             | Check host names for compliance with RFC 952 and RFC 1123 and take the defined actioni (e.g. `warn`, `ignore`, `fail`). |
 | `bind_forwarders`              | `[]`                             | A list of name servers to forward DNS requests to.                                                                       |

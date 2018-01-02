@@ -19,6 +19,9 @@ options {
   statistics-file "{{ bind_dir }}/data/named_stats.txt";
   memstatistics-file "{{ bind_dir }}/data/named_mem_stats.txt";
   allow-query     { {{ bind_allow_query|join(';') }}; };
+{% if bind_allow_query_cache %}
+  allow-query-cache     { {{ bind_allow_query|join(';') }}; };
+{% endif %}
 {% if bind_acls|length != 0 %}
   allow-transfer  { {% for acl in bind_acls %}"{{ acl.name }}"; {% endfor %}};
 {% endif %}
